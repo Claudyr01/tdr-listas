@@ -1,0 +1,21 @@
+#Sessão e histórico do R
+.Rhistory
+.Rdata
+.Rproj.user/
+#Credenciais
+.Renviron
+#Saídas de renderização
+/_book/
+/.quarto/
+*.html
+*_cache/
+#Dados brutos, grandes demais para repositório
+dados/brutos
+#Arquivos auxiliares do latexmk
+.aux
+.log
+.out
+.bbl
+.blg
+.fls
+.fdb_latexmk
