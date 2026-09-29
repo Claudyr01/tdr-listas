@@ -1,0 +1,46 @@
+---
+title: "Relatório - Lista 02"
+lang: pt
+format: html
+execute:
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(targets)
+library(knitr)
+```
+
+## Análise dos Dados
+
+Conforme apresentado na @tbl-tabela, os dados carregados contêm as medições observadas.
+
+```{r}
+#| label: tbl-tabela
+#| tbl-cap: "Visualização inicial da base de dados."
+#| echo: false
+dados_alvo <- targets::tar_read(arquivo_dados)
+df <- read.csv(dados_alvo)
+knitr::kable(head(df))
+```
+
+## Visualização Gráfica
+
+Na @fig-grafico, observamos a dispersão das variáveis analisadas.
+
+```{r}
+#| label: fig-grafico
+#| fig-cap: "Dispersão gerada a partir dos dados do pipeline."
+#| echo: false
+plot(
+  df$Ozone, df$Solar.R,
+  xlab = 'Ozono (ppb)',
+  ylab = 'Radiação Solar (lang)',
+  main = 'Dispersão dos Dados',
+  pch = 19,
+  col = 'steelblue'
+)
+```
